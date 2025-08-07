@@ -132,7 +132,7 @@ jobs:
           cp plugins/sqldrivers/libqsqlmysql.dylib mariadb_driver/plugins/sqldrivers
           cp /usr/local/lib/libmariadb.dylib mariadb_driver/
       - name: Mac artefact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: MacOS
           path: ${{ github.workspace }}/qtbase/src/plugins/sqldrivers/mariadb_driver/
