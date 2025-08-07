@@ -2,7 +2,7 @@ name: Continous Builds
 
 on:
   push:
-    branches: [qt6]
+    branches: [qt5]
 
 jobs:
   job_1:
@@ -20,11 +20,11 @@ jobs:
       - name: install qt
         run: |
           pip install aqtinstall
-          python3 -m aqt install-qt -O ${{ github.workspace }}/Qt/ linux desktop 6.2.1
-          echo ${{ github.workspace }}/Qt/6.2.1/gcc_64/bin/ >> $GITHUB_PATH
+          python3 -m aqt install-qt -O ${{ github.workspace }}/Qt/ linux desktop 5.15.2
+          echo ${{ github.workspace }}/Qt/5.15.2/gcc_64/bin/ >> $GITHUB_PATH
       - name: build
         run: |
-          ./build_qsql.sh 6.2.1 linux
+          ./build_qsql.sh 5.15.2 linux
           cd ${{ github.workspace }}/qtbase/src/plugins/sqldrivers/
           mkdir -p mariadb_driver/plugins/sqldrivers
           cp plugins/sqldrivers/libqsqlmysql.so mariadb_driver/plugins/sqldrivers
