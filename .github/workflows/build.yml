@@ -4,7 +4,7 @@ on:
   push:
     branches: [qt5]
 env:
-  QT_VERSION: 5.15.2
+  QT_VERSION: 5.15.19
 
 jobs:
   job_1:
